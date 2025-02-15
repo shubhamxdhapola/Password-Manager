@@ -1,0 +1,8 @@
+@import "tailwindcss";
+.disc{
+   width: 400px;
+}
+
+body{
+   font-family: 'Poppins', sans-serif, monospace; 
+}
