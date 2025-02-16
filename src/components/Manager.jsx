@@ -8,6 +8,7 @@ import Background from "./Background.jsx";
 import PasswordForm from "./PasswordForm.jsx";
 import PasswordTable from "./PasswordTable.jsx";
 import { getPasswords } from "../utils/helper.js";
+import NoPasswords from "./NoPasswords.jsx";
 
 const InfoContext = createContext()
 
@@ -39,7 +40,7 @@ export default function Manager() {
           <Logo />
           <InfoContext.Provider value={{handleSubmit, register, passRef, showPassRef, buttonRef, reset, setValue, errors, isSubmitting, passwordArray, setPasswordArray}}>
               <PasswordForm />
-              <PasswordTable />
+            { passwordArray.length ? <PasswordTable /> : <NoPasswords />}
           </InfoContext.Provider>        
       </div>
       </>
