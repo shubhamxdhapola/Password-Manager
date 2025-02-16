@@ -46,12 +46,15 @@ export function editPassword(id, buttonRef, passwordArray, setPasswordArray, set
         setValue("username", passwordToEdit.username);
         setValue("password", passwordToEdit.password);
     }
-    buttonRef.current.addEventListener('click', () => updatePassword(id, setPasswordArray, passwordArray))
+    buttonRef.current.addEventListener('click', () => {
+        updatePassword(id, setPasswordArray, passwordArray, buttonRef)
+    })
 }
 
-export function updatePassword(id, setPasswordArray, passwordArray) {
+
+export function updatePassword(id, setPasswordArray, passwordArray, buttonRef) {
     setPasswordArray(passwordArray.filter((item) => item.id !== id))
-    savePassword()
+    buttonRef.current.innerText = "Save Password";
 }
 
 export function deletePassword(id, passwordArray, setPasswordArray) {
