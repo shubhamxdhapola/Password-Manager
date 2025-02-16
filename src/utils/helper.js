@@ -51,7 +51,6 @@ export function editPassword(id, buttonRef, passwordArray, setPasswordArray, set
     })
 }
 
-
 export function updatePassword(id, setPasswordArray, passwordArray, buttonRef) {
     setPasswordArray(passwordArray.filter((item) => item.id !== id))
     buttonRef.current.innerText = "Save Password";
